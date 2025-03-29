@@ -3,7 +3,7 @@ import Link from "next/link";
 // Next
 
 // React
-import React from "react";
+import React, { Suspense } from "react";
 // React
 
 // Icons
@@ -41,7 +41,9 @@ const Header = () => {
             Brands
           </Link>
         </div>
-        <HeaderSearchInput />
+        <Suspense fallback="loading...">
+          <HeaderSearchInput />
+        </Suspense>
         <div className="flex gap-4 items-center">
           <FaShoppingCart className="text-xl cursor-pointer" />
           <FaUser className="text-xl cursor-pointer" />
